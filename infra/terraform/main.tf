@@ -72,7 +72,7 @@ resource "azurerm_key_vault" "main" {
 
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_static_site" "dashboard" {
+resource "azurerm_static_web_app" "dashboard" {
   name                = "swa-${local.normalized_name}"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
@@ -131,7 +131,7 @@ resource "azurerm_logic_app_workflow" "incident_agent" {
   tags                = local.tags
 }
 
-resource "azurerm_integration_account" "main" {
+resource "azurerm_logic_app_integration_account" "main" {
   name                = "ia-${local.normalized_name}"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name

@@ -8,5 +8,5 @@ output "application_insights_connection_string" {
 }
 
 output "static_site_default_host_name" {
-  value = azurerm_static_site.dashboard.default_host_name
+  value = azurerm_static_web_app.dashboard.default_host_name
 }
