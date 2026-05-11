@@ -1,0 +1,32 @@
+{
+  "service": "payments-api",
+  "environment": "staging",
+  "schemaVersion": "2026-05",
+  "records": [
+    {
+      "id": "txn_90001",
+      "amount": 2499.99,
+      "timestamp": "2026-05-10T08:12:00Z"
+    },
+    {
+      "id": "txn_90002",
+      "amount": 89.50,
+      "timestamp": "2026-05-10T08:14:22Z"
+    },
+    {
+      "id": "txn_90003",
+      "amount": 0,
+      "timestamp": "2026-05-10T08:15:01Z"
+    },
+    {
+      "id": "txn_90004",
+      "amount": 15750.00,
+      "timestamp": "2026-05-10T09:00:00Z"
+    },
+    {
+      "id": "txn_90005",
+      "amount": 3.99,
+      "timestamp": "2026-05-10T09:22:45Z"
+    }
+  ]
+}

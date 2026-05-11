@@ -1,0 +1,18 @@
+[
+  {
+    "level": "error",
+    "message": "Schema validation failed: field 'customer_id' is required but missing in /orders/create"
+  },
+  {
+    "level": "warning",
+    "message": "API contract test divergence: expected 'amount' (number), received 'amount' (string)"
+  },
+  {
+    "level": "error",
+    "message": "Breaking contract change detected on payments-v2 endpoint after deploy #142"
+  },
+  {
+    "level": "warning",
+    "message": "Consumer 'mobile-app' reporting 422 errors on /orders/create since 14:22 UTC"
+  }
+]

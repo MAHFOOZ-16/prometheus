@@ -1,0 +1,9 @@
+{
+  "vendor": "salesforce",
+  "payload": {
+    "Id": "0015g00000ABCDE",
+    "AnnualRevenue": 1200000,
+    "Status__c": "Active",
+    "LastModifiedDate": "2026-05-09T18:30:00Z"
+  }
+}

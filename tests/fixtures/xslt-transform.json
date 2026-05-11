@@ -1,0 +1,12 @@
+{
+  "vendor": "legacy-soap",
+  "mode": "xslt",
+  "xml": "<invoice><invoiceId>INV-2026-0847</invoiceId><customer>Contoso Ltd</customer><total currency=\"USD\">12500.00</total><issued>2026-05-10</issued></invoice>",
+  "xslt": {
+    "id": "invoiceId",
+    "customer": "customer",
+    "amount": "total",
+    "currency": "total@currency",
+    "timestamp": "issued"
+  }
+}

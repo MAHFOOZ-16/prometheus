@@ -1,0 +1,6 @@
+{
+  "service": "analytics-api",
+  "environment": "dev",
+  "schemaVersion": "2026-05",
+  "records": []
+}

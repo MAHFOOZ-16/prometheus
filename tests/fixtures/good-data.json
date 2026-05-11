@@ -1,0 +1,12 @@
+{
+  "service": "orders-api",
+  "environment": "staging",
+  "schemaVersion": "2026-05",
+  "records": [
+    {
+      "id": "ord_1001",
+      "amount": 129.5,
+      "timestamp": "2026-05-10T09:00:00Z"
+    }
+  ]
+}

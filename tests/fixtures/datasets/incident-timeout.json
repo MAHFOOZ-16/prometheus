@@ -1,0 +1,26 @@
+[
+  {
+    "level": "warning",
+    "message": "Elevated latency on inventory-service: p99 = 4200ms"
+  },
+  {
+    "level": "error",
+    "message": "ETIMEDOUT connecting to inventory-service.internal:8443"
+  },
+  {
+    "level": "critical",
+    "message": "Gateway timeout: upstream inventory-service did not respond within 5000ms"
+  },
+  {
+    "level": "error",
+    "message": "Circuit breaker tripped for inventory-service after 12 consecutive failures"
+  },
+  {
+    "level": "warning",
+    "message": "Retry budget exhausted for order-processing pipeline"
+  },
+  {
+    "level": "error",
+    "message": "Cascading timeout: checkout-api blocked waiting on inventory-service dependency"
+  }
+]

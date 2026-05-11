@@ -1,0 +1,27 @@
+{
+  "service": "inventory-api",
+  "environment": "production",
+  "schemaVersion": "2026-05",
+  "records": [
+    {
+      "id": "",
+      "amount": -250.00,
+      "timestamp": "not-a-date"
+    },
+    {
+      "id": "inv_2002",
+      "amount": -1,
+      "timestamp": "2026-05-10T10:00:00Z"
+    },
+    {
+      "id": "",
+      "amount": 100,
+      "timestamp": "yesterday"
+    },
+    {
+      "id": "inv_2004",
+      "amount": 50.00,
+      "timestamp": "2026-05-10T11:30:00Z"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "level": "warning",
+    "message": "Token refresh failed for managed identity on payments-worker"
+  },
+  {
+    "level": "error",
+    "message": "401 Unauthorized: Bearer token expired for Key Vault reference payments-db-connstr"
+  },
+  {
+    "level": "critical",
+    "message": "Secret rotation detected stale token: last rotation was 47 days ago"
+  },
+  {
+    "level": "error",
+    "message": "Forbidden: RBAC assignment missing for payments-worker on keyvault-prod-eu"
+  },
+  {
+    "level": "warning",
+    "message": "Fallback credentials not configured; service entering degraded mode"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "level": "warning",
+    "message": "CPU utilization at 78% on worker-pool-3"
+  },
+  {
+    "level": "error",
+    "message": "Memory pressure: OOM killer invoked on pod checkout-7f4b2"
+  },
+  {
+    "level": "warning",
+    "message": "Disk I/O latency spike: 340ms average on storage-node-eu-west"
+  },
+  {
+    "level": "error",
+    "message": "Connection pool saturated: 200/200 connections in use on db-primary"
+  },
+  {
+    "level": "warning",
+    "message": "GC pause exceeded 800ms on analytics-aggregator"
+  },
+  {
+    "level": "warning",
+    "message": "DNS resolution intermittently slow for internal service mesh"
+  },
+  {
+    "level": "error",
+    "message": "Request queue depth growing: 1,247 pending requests on api-router"
+  }
+]

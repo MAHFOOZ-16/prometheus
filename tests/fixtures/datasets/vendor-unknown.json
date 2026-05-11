@@ -1,0 +1,9 @@
+{
+  "vendor": "shopify",
+  "payload": {
+    "order_id": "ORD-55012",
+    "total_price": "129.99",
+    "financial_status": "paid",
+    "processed_at": "2026-05-10T16:00:00Z"
+  }
+}

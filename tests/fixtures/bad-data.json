@@ -1,0 +1,12 @@
+{
+  "service": "orders-api",
+  "environment": "production",
+  "schemaVersion": "2026-05",
+  "records": [
+    {
+      "id": "",
+      "amount": -50,
+      "timestamp": "broken"
+    }
+  ]
+}

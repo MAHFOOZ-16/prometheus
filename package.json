@@ -1,0 +1,25 @@
+{
+  "name": "prometheus-azure-devops-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered Azure DevOps platform for release gates, API normalization, and incident analysis.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "lint": "node scripts/lint.mjs",
+    "security:scan": "node scripts/security-scan.mjs",
+    "validate:data": "node bin/prometheus.mjs validate tests/fixtures/good-data.json",
+    "validate:contract": "node bin/prometheus.mjs normalize tests/fixtures/vendor-payload.json",
+    "analyze:logs": "node bin/prometheus.mjs analyze tests/fixtures/incident-logs.json",
+    "pipeline": "node bin/prometheus.mjs pipeline",
+    "ci:local": "npm run lint && npm run security:scan && npm test && npm run pipeline",
+    "demo:blocked-release": "node scripts/validate-data.mjs tests/fixtures/bad-data.json",
+    "test:scenarios": "node scripts/test-all-scenarios.mjs",
+    "docker:monitor": "node scripts/elk-pipeline.mjs",
+    "dev:full": "node scripts/serve.mjs & node scripts/elk-pipeline.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

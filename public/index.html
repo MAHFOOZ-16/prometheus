@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prometheus Lab | Interactive Testing Playground</title>
+    <meta name="description" content="Test all 3 Prometheus enterprise modules with real datasets: data validation, API normalization, and incident analysis.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='4' fill='%230d1117'/%3E%3Cpath d='M12 2L3 7v10l9 5 9-5V7l-9-5z' fill='rgba(100,244,255,0.1)' stroke='%2364f4ff' stroke-width='0.75'/%3E%3Cpath d='M9 7v10' stroke='%2364f4ff' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M9 7h4.5a3 3 0 0 1 0 6H9' stroke='%2364f4ff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+  </head>
+  <body>
+    <nav class="lab-nav" aria-label="Lab navigation">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="rgba(100,244,255,0.08)" stroke="rgba(100,244,255,0.5)" stroke-width="0.75"/>
+            <path d="M9 7v10" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M9 7h4.5a3 3 0 0 1 0 6H9" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </span>
+        <div>
+          <strong>Prometheus</strong>
+          <small>Testing Lab</small>
+        </div>
+      </a>
+    </nav>
+
+    <main class="lab-shell">
+      <!-- Hero -->
+      <header class="lab-hero">
+        <p class="lab-eyebrow">Interactive Testing Playground</p>
+        <h1>Prometheus Lab</h1>
+        <p class="lab-subtitle">Load realistic enterprise datasets and watch Prometheus solve all <strong>3 pain points</strong> in real time. Click any scenario below to see the engine process data live.</p>
+      </header>
+
+      <!-- Architecture Diagram -->
+      <section class="arch-section" aria-labelledby="arch-title">
+        <div class="arch-header">
+          <p class="lab-eyebrow">System Architecture</p>
+          <h2 id="arch-title">How The 3 Modules Connect</h2>
+        </div>
+        <div class="arch-diagram">
+          <img src="/architecture.svg" alt="Prometheus Unified Platform Architecture" class="arch-svg-img">
+        </div>
+      </section>
+
+      <!-- Pain Point Tabs -->
+      <section class="pain-tabs" aria-label="Pain point selector">
+        <div class="tab-bar" role="tablist">
+          <button class="tab is-active" role="tab" aria-selected="true" data-tab="gatekeeper" id="tab-gatekeeper" aria-controls="panel-gatekeeper">
+            <span class="tab-badge tab-red">1</span>
+            <div>
+              <strong>Bad Data</strong>
+              <small>Enterprise data risk</small>
+            </div>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="normalizer" id="tab-normalizer" aria-controls="panel-normalizer">
+            <span class="tab-badge tab-blue">2</span>
+            <div>
+              <strong>API Chaos</strong>
+              <small>Integration drift risk</small>
+            </div>
+          </button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="analyst" id="tab-analyst" aria-controls="panel-analyst">
+            <span class="tab-badge tab-green">3</span>
+            <div>
+              <strong>AI Agent</strong>
+              <small>Autonomous diagnostics</small>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- Panel 1: Release Gatekeeper -->
+      <section class="test-panel is-visible" id="panel-gatekeeper" role="tabpanel" aria-labelledby="tab-gatekeeper">
+        <div class="panel-header">
+          <div class="panel-icon panel-icon-red">RG</div>
+          <div>
+            <h2>Release Gatekeeper : Data Validation Engine</h2>
+            <p>Catches bad data before it reaches production. Select a dataset or paste your own JSON.</p>
+          </div>
+        </div>
+
+        <div class="dataset-picker" aria-label="Select dataset">
+          <button class="dataset-btn is-selected" data-dataset="release-valid-multi">
+            <span class="ds-status ds-pass">✓</span>
+            <div>
+              <strong>Valid Multi-Record</strong>
+              <small>5 records, all fields correct</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="release-bad-fields">
+            <span class="ds-status ds-fail">✕</span>
+            <div>
+              <strong>Bad Fields</strong>
+              <small>Empty IDs, negative amounts, bad dates</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="release-wrong-schema">
+            <span class="ds-status ds-fail">✕</span>
+            <div>
+              <strong>Wrong Schema</strong>
+              <small>Old version, unsupported environment</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="release-empty-records">
+            <span class="ds-status ds-fail">✕</span>
+            <div>
+              <strong>Empty Records</strong>
+              <small>Array with zero entries</small>
+            </div>
+          </button>
+        </div>
+
+        <div class="lab-workspace">
+          <div class="editor-pane">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Input Payload</span>
+              <button class="run-btn" data-engine="gatekeeper" type="button">▶ Run Gatekeeper</button>
+            </div>
+            <textarea id="input-gatekeeper" class="code-editor" spellcheck="false" aria-label="JSON input for gatekeeper"></textarea>
+          </div>
+          <div class="result-pane" id="result-gatekeeper">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Validation Result</span>
+            </div>
+            <div class="result-body">
+              <div class="result-placeholder"><span>Select a dataset and click <strong>Run Gatekeeper</strong> to see results</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Integration Normalizer -->
+      <section class="test-panel" id="panel-normalizer" role="tabpanel" aria-labelledby="tab-normalizer" hidden>
+        <div class="panel-header">
+          <div class="panel-icon panel-icon-blue">IN</div>
+          <div>
+            <h2>Integration Normalizer | Azure Mapping Engine</h2>
+            <p>Maps vendor APIs to canonical contracts using JSON mapping, Liquid templates, and XSLT transforms. Select a scenario or paste your own.</p>
+          </div>
+        </div>
+
+        <div class="dataset-picker" aria-label="Select dataset" style="grid-template-columns: repeat(5, 1fr);">
+          <button class="dataset-btn is-selected" data-dataset="vendor-stripe-valid">
+            <span class="ds-status ds-pass">✓</span>
+            <div>
+              <strong>Stripe</strong>
+              <small>JSON field mapping</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="vendor-bitstamp-valid">
+            <span class="ds-status ds-pass">✓</span>
+            <div>
+              <strong>Bitstamp</strong>
+              <small>Crypto exchange API</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="vendor-salesforce-valid">
+            <span class="ds-status ds-pass">✓</span>
+            <div>
+              <strong>Salesforce</strong>
+              <small>CRM account record</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="vendor-liquid-template">
+            <span class="ds-status ds-critical" style="background: rgba(112,184,255,0.15); color: var(--blue);">L</span>
+            <div>
+              <strong>Liquid Template</strong>
+              <small>Azure APIM style</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="vendor-xslt-transform">
+            <span class="ds-status ds-critical" style="background: rgba(246,198,80,0.15); color: var(--gold);">X</span>
+            <div>
+              <strong>XML / XSLT</strong>
+              <small>Azure Logic Apps style</small>
+            </div>
+          </button>
+        </div>
+
+        <div class="lab-workspace">
+          <div class="editor-pane">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Vendor Payload</span>
+              <button class="run-btn" data-engine="normalizer" type="button">▶ Run Normalizer</button>
+            </div>
+            <textarea id="input-normalizer" class="code-editor" spellcheck="false" aria-label="JSON input for normalizer"></textarea>
+          </div>
+          <div class="result-pane" id="result-normalizer">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Normalization Result</span>
+            </div>
+            <div class="result-body">
+              <div class="result-placeholder"><span>Select a vendor payload and click <strong>Run Normalizer</strong> to see results</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 3: Incident Agent -->
+      <section class="test-panel" id="panel-analyst" role="tabpanel" aria-labelledby="tab-analyst" hidden>
+        <div class="panel-header">
+          <div class="panel-icon panel-icon-green">AI</div>
+          <div>
+            <h2>Incident Agent | Autonomous Diagnostics</h2>
+            <p>AI agent that autonomously ingests ELK logs, identifies root cause, and recommends remediation actions. Select a scenario or paste your own.</p>
+          </div>
+        </div>
+
+
+        <div class="dataset-picker" aria-label="Select dataset">
+          <button class="dataset-btn is-selected" data-dataset="incident-timeout">
+            <span class="ds-status ds-critical">🔴</span>
+            <div>
+              <strong>Timeout Cascade</strong>
+              <small>Gateway timeout + retry exhaustion</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="incident-auth-failure">
+            <span class="ds-status ds-critical">🔴</span>
+            <div>
+              <strong>Auth Failure</strong>
+              <small>Expired tokens + RBAC issues</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="incident-schema-break">
+            <span class="ds-status ds-warn">🟡</span>
+            <div>
+              <strong>Schema Break</strong>
+              <small>Contract regression post-deploy</small>
+            </div>
+          </button>
+          <button class="dataset-btn" data-dataset="incident-mixed-noise">
+            <span class="ds-status ds-warn">🟠</span>
+            <div>
+              <strong>Mixed Noise</strong>
+              <small>No clear pattern | unknown anomaly</small>
+            </div>
+          </button>
+        </div>
+
+        <div class="lab-workspace">
+          <div class="editor-pane">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Elasticsearch Query (via Kibana/Azure)</span>
+              <button class="run-btn" data-engine="analyst" type="button">▶ Run Analyst</button>
+            </div>
+            <textarea id="input-analyst" class="code-editor" spellcheck="false" aria-label="JSON input for analyst"></textarea>
+          </div>
+          <div class="result-pane" id="result-analyst">
+            <div class="pane-header">
+              <span class="pane-dot red" aria-hidden="true"></span>
+              <span class="pane-dot yellow" aria-hidden="true"></span>
+              <span class="pane-dot green" aria-hidden="true"></span>
+              <span class="pane-title">Analysis Result</span>
+            </div>
+            <div class="result-body">
+              <div class="result-placeholder"><span>Select a log scenario and click <strong>Run Analyst</strong> to see results</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Footer Counters -->
+      <section class="impact-summary" aria-label="Session summary">
+        <h2>Session Activity</h2>
+        <div class="impact-cards">
+          <article class="impact-card impact-red">
+            <span class="impact-value" id="impact-blocked">0</span>
+            <span class="impact-label">Bad releases blocked</span>
+          </article>
+          <article class="impact-card impact-blue">
+            <span class="impact-value" id="impact-normalized">0</span>
+            <span class="impact-label">APIs normalized</span>
+          </article>
+          <article class="impact-card impact-green">
+            <span class="impact-value" id="impact-diagnosed">0</span>
+            <span class="impact-label">Incidents diagnosed</span>
+          </article>
+          <article class="impact-card impact-total">
+            <span class="impact-value" id="impact-gate-score">100%</span>
+            <span class="impact-label">Avg. Gate Score</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>

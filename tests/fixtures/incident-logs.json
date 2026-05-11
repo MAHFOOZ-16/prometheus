@@ -1,0 +1,10 @@
+[
+  {
+    "level": "error",
+    "message": "gateway timeout from inventory service"
+  },
+  {
+    "level": "warning",
+    "message": "retry budget almost exhausted"
+  }
+]

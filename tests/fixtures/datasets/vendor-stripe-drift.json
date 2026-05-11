@@ -1,0 +1,8 @@
+{
+  "vendor": "stripe",
+  "payload": {
+    "payment_id": "pay_9901",
+    "amount_total": 780.50,
+    "payment_status": "pending"
+  }
+}

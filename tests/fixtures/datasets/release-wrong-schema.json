@@ -1,0 +1,12 @@
+{
+  "service": "billing-api",
+  "environment": "canary",
+  "schemaVersion": "2025-11",
+  "records": [
+    {
+      "id": "bill_3001",
+      "amount": 599.99,
+      "timestamp": "2026-05-10T07:00:00Z"
+    }
+  ]
+}
